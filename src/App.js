@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import ExpenseItem from "./components/Expenses/ExpenseItem";
+
+const expenses = [
+  {
+    id: "e1",
+    title: "Lunch",
+    amount: 200,
+    category: "Food",
+    date: new Date(2021, 6, 11),
+  },
+  {
+    id: "e2",
+    title: "Shampoo",
+    amount: 159,
+    category: "Cosmetic",
+    date: new Date(2021, 6, 3),
+  },
+  {
+    id: "e3",
+    title: "Cleaning Stuff",
+    amount: 362,
+    category: "Home",
+    date: new Date(2021, 6, 1),
+  },
+  {
+    id: "e2",
+    title: "Sneaker",
+    amount: 799,
+    category: "Clothing",
+    date: new Date(2021, 6, 1),
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {expenses.map((expense) => (
+        <ExpenseItem expense={expense} />
+      ))}
     </div>
   );
 }
