@@ -1,9 +1,9 @@
-import ExpenseItem from "./ExpenseItem";
+import ExpenseList from "./ExpenseList";
 
 const Expenses = (props) => {
   return (
     <div>
-      <ExpenseItem />
+      <ExpenseList expenses={props.expenses} />
     </div>
   );
 };
