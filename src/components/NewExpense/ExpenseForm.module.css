@@ -1,0 +1,7 @@
+.expense-form {
+  display: flex;
+  flex-direction: column;
+}
+.form-input {
+  width: 80%;
+}
