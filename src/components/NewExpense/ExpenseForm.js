@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import style from "./ExpenseForm.module.css";
 
 const ExpenseForm = (props) => {
   const [typedAmount, setTypedAmount] = useState("");
@@ -43,27 +44,33 @@ const ExpenseForm = (props) => {
   }
 
   return (
-    <div>
-      <form onSubmit={addExpense}>
+    <form className={style["expense-form"]} onSubmit={addExpense}>
+      <div className={style["form-input"]}>
         <label>Amount</label>
         <input
           type="number"
           value={typedAmount}
           onChange={amountChangeHandler}
         />
+      </div>
+      <div className={style["form-input"]}>
         <label>Title</label>
         <input type="text" value={typedTitle} onChange={titleChangeHandler} />
+      </div>
+      <div className={style["form-input"]}>
         <label>Category</label>
         <input
           type="text"
           value={typedCategory}
           onChange={categoryChangeHandler}
         />
+      </div>
+      <div className={style["form-input"]}>
         <label>Date</label>
         <input type="date" value={typedDate} onChange={dateChangeHandler} />
-        <button>Add</button>
-      </form>
-    </div>
+      </div>
+      <button>Add</button>
+    </form>
   );
 };
 

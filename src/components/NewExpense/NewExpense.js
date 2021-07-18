@@ -1,5 +1,6 @@
 import React from "react";
 import ExpenseForm from "./ExpenseForm";
+import style from "./NewExpense.module.css";
 
 const NewExpense = (props) => {
   const addExpenseHandler = (data) => {
@@ -12,7 +13,7 @@ const NewExpense = (props) => {
   };
 
   return (
-    <div>
+    <div className={style["form-container"]}>
       <ExpenseForm addExpenseHandler={addExpenseHandler} />
     </div>
   );
