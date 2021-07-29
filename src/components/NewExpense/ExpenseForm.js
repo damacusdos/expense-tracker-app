@@ -35,8 +35,15 @@ const ExpenseForm = (props) => {
       date: new Date(typedDate),
     };
 
+    const isInvalid = Object.values(data).includes("");
+
+    if (!isInvalid) {
+      props.addExpenseHandler(data);
+    } else {
+      alert("Invalid Input!");
+    }
+
     // console.log(data);
-    props.addExpenseHandler(data);
     setTypedTitle("");
     setTypedAmount("");
     setTypedCategory("");
@@ -69,7 +76,9 @@ const ExpenseForm = (props) => {
         <label>Date</label>
         <input type="date" value={typedDate} onChange={dateChangeHandler} />
       </div>
-      <button>Add</button>
+      <div>
+        <button className={style["form-button"]}>Add</button>
+      </div>
     </form>
   );
 };
