@@ -5,6 +5,12 @@ import styles from "./ExpenseList.module.css";
 const ExpenseList = (props) => {
   return (
     <div className={styles["list-container"]}>
+      <div className={styles["list-header"]}>
+        <span>Date</span>
+        <span>Category</span>
+        <span>Title</span>
+        <span>Amount</span>
+      </div>
       {props.expenses.map((expense) => (
         <ExpenseItem
           key={expense.id}

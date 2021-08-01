@@ -1,3 +1,7 @@
 .list-container {
   width: 60%;
 }
+.list-header {
+  display: flex;
+  justify-content: space-around;
+}
